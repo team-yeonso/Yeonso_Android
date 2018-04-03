@@ -3,8 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="dsm.yeonso.SignInActivity">
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signInActivity_editText_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="아이디"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signInActivity_editText_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="비밀번호"/>
+    </android.support.design.widget.TextInputLayout>
+
+    // 로그인 완료 btn
+    // 회원가입 btn
+    // 아이디 찾기
+    // 비밀번호 찾기
 
 </LinearLayout>
