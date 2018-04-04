@@ -19,5 +19,8 @@ public class SignUpActivity extends AppCompatActivity {
         pwCheck = findViewById(R.id.signUpActivity_editText_pw_check);
         emailCodeCheck = findViewById(R.id.signUpActivity_editText_eamil_codeCheck);
 
+        // 회원가입 완료 버튼
+        // 이메일 인증 버튼
+        // 인증코드 전송 버튼
     }
 }
