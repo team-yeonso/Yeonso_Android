@@ -14,8 +14,8 @@
             android:id="@+id/signInActivity_editText_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="아이디"/>
+            android:hint="아이디"
+            android:inputType="textEmailAddress" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -26,13 +26,37 @@
             android:id="@+id/signInActivity_editText_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="비밀번호"/>
+            android:hint="비밀번호"
+            android:inputType="textEmailAddress" />
     </android.support.design.widget.TextInputLayout>
 
-    // 로그인 완료 btn
-    // 회원가입 btn
-    // 아이디 찾기
-    // 비밀번호 찾기
+    <Button
+        android:id="@+id/signInActivity_button_signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인 완료" />
+
+    <Button
+        android:id="@+id/signInActivity_button_signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입" />
+
+    <Button
+        android:id="@+id/signInActivity_button_find_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디 찾기" />
+
+    <Button
+        android:id="@+id/signInActivity_button_find_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 찾기" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인 3회 실패 시 접근이 제한됩니다." />
 
 </LinearLayout>
