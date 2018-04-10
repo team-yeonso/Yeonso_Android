@@ -1,14 +1,21 @@
 package dsm.yeonso;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class SignUpActivity extends AppCompatActivity {
+
     private EditText email;
     private EditText pw;
     private EditText pwCheck;
     private EditText emailCodeCheck;
+    private Button emailAuth;
+    private Button emailCode;
+    private Button signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +25,22 @@ public class SignUpActivity extends AppCompatActivity {
         pw = findViewById(R.id.signUpActivity_editText_pw);
         pwCheck = findViewById(R.id.signUpActivity_editText_pw_check);
         emailCodeCheck = findViewById(R.id.signUpActivity_editText_eamil_codeCheck);
+        emailAuth = findViewById(R.id.signUpActivity_button_email_authentication);
+        emailCode = findViewById(R.id.signUpActivity_button_email_code);
+        signUp = findViewById(R.id.signUpActivity_button_signUp);
 
-        // 회원가입 완료 버튼
-        // 이메일 인증 버튼
-        // 인증코드 전송 버튼
+        onClick(signUp, SignInActivity.class);
+
+        // TODO: 2018-04-10 시간이 된다면 비밀번호와 비밀번호 확인을 실시간으로 비교해주는 기능을 추가하면 좋을듯
+    }
+
+    public void onClick(Button button, final Class neededClass) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), neededClass);
+                startActivity(intent);
+            }
+        });
     }
 }
