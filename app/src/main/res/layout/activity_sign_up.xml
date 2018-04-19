@@ -1,175 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="dsm.yeonso.SignUpActivity">
 
-    // TODO: 2018-04-11 elevation bottom, right만 적용되게끔 수정
-    <RelativeLayout
+    <include
+        layout="@layout/android_sign_up_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    // TODO: 2018-04-11 elevation bottom, right만 적용되게끔 수정
+
+    <RelativeLayout
+        android:id="@+id/signUpActivity_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="75dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="80dp"
-        android:background="@color/black"
-        android:elevation="50dp">
-        <LinearLayout
-            android:id="@+id/signUpActivity_linearLayout_id"
+        android:layout_marginTop="75dp">
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:elevation="500dp">
 
-            <TextView
-                android:id="@+id/signUpActivity_textView_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="아이디" />
-
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/signUpActivity_editText_email"
+                <LinearLayout
+                    android:id="@+id/signUpActivity_linearLayout_id"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="ex)abc@email.com"
-                    android:inputType="textEmailAddress" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/signUpActivity_textView_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아이디"
+                        android:textColor="@color/colorTextView" />
 
-        <!--<LinearLayout-->
-        <!--android:id="@+id/signUpActivity_linearLayout_authCode"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/signUpActivity_linearLayout_id"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_marginRight="5dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:orientation="horizontal">-->
+                    <EditText
+                        android:id="@+id/signUpActivity_editText_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="55dp"
+                        android:hint="ex)abc@email.com"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorEditText"
+                        android:textSize="14sp" />
 
-        <!--<TextView-->
-        <!--android:id="@+id/signUpActivity_textView_authCode"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="인증번호" />-->
+                </LinearLayout>
 
-        <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
 
-        <!--<android.support.design.widget.TextInputEditText-->
-        <!--android:id="@+id/signUpActivity_editText_eamil_codeCheck"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="인증번호 입력" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
-        <!--</LinearLayout>-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/signUpActivity_linearLayout_authCode"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_marginRight="5dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:orientation="horizontal">-->
+                        <Button
+                            android:id="@+id/signUpActivity_button_email_code_send"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/rounded_button_sign_up"
+                            android:text="인증코드 전송"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
 
-        <!--<TextView-->
-        <!--android:id="@+id/signUpActivity_textView_pw"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="비밀번호" />-->
+                <LinearLayout
+                    android:id="@+id/signUpActivity_linearLayout_authCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_alignTop="@+id/relativeLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-        <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+                    <TextView
+                        android:id="@+id/signUpActivity_textView_authCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="인증번호"
+                        android:textColor="@color/colorTextView" />
 
-        <!--<android.support.design.widget.TextInputEditText-->
-        <!--android:id="@+id/signUpActivity_editText_pw"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="영문/숫자/특수 조합 8~16자" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
-        <!--</LinearLayout>-->
+                    <EditText
+                        android:id="@+id/signUpActivity_editText_eamil_codeCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:hint="인증번호 입력"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorEditText"
+                        android:textSize="14sp" />
 
-        <!--<LinearLayout-->
-        <!--android:id="@+id/signUpActivity_linearLayout_pw_Check"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/signUpActivity_linearLayout_authCode"-->
-        <!--android:orientation="horizontal">-->
+                </LinearLayout>
 
-        <!--<TextView-->
-        <!--android:id="@+id/signUpActivity_textView_pw_check"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="비밀번호 확인" />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
 
-        <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-        <!--<android.support.design.widget.TextInputEditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="비밀번호 재입력" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
-        <!--</LinearLayout>-->
+                        <Button
+                            android:id="@+id/signUpActivity_button_email_code_check"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/rounded_button_sign_up"
+                            android:text="인증코드 확인"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
 
-        <!--<LinearLayout-->
-        <!--android:id="@+id/signUpActivity_linearLayout_name"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/signUpActivity_linearLayout_pw_Check"-->
-        <!--android:orientation="horizontal">-->
+                <LinearLayout
+                    android:id="@+id/signUpActivity_linearLayout_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-        <!--<TextView-->
-        <!--android:id="@+id/signUpActivity_textView_name"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="이름" />-->
+                    <TextView
+                        android:id="@+id/signUpActivity_textView_pw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="비밀번호"
+                        android:textColor="@color/colorTextView" />
 
-        <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+                    <EditText
+                        android:id="@+id/signUpActivity_editText_pw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:hint="영문/숫자/특수 조합 8~16자"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorEditText"
+                        android:textSize="14sp" />
 
-        <!--<android.support.design.widget.TextInputEditText-->
-        <!--android:id="@+id/signUpActivity_editText_name"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="예) 홍길동" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
-        <!--</LinearLayout>-->
+                </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/signUpActivity_linearLayout_pw_Check"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/signUpActivity_button_email_authentication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:text="이메일 인증" />
+                    <TextView
+                        android:id="@+id/signUpActivity_textView_pw_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="비밀번호 확인"
+                        android:textColor="@color/colorTextView" />
 
-        <Button
-            android:id="@+id/signUpActivity_button_email_code"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:text="인증코드 확인" />
+                    <EditText
+                        android:id="@+id/signUpActivity_editText_pw_check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:hint="비밀번호 재입력"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorEditText"
+                        android:textSize="14sp" />
+                </LinearLayout>
 
-        <Button
-            android:id="@+id/signUpActivity_button_signUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:text="회원가입 완료" />
+                <LinearLayout
+                    android:id="@+id/signUpActivity_linearLayout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/signUpActivity_linearLayout_pw_Check"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/signUpActivity_textView_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이름"
+                        android:textColor="@color/colorTextView" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:hint="ex) 홍길동"
+                        android:textColorHint="@color/colorEditText"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </RelativeLayout>
 
-</LinearLayout>
+
+    <Button
+        android:id="@+id/signUpActivity_button_signUp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rounded_button_sign_up_complicate"
+        android:text="SIGN UP"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

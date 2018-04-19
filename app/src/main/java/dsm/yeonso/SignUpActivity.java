@@ -24,17 +24,15 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.android_sign_up_background);
+        setContentView(R.layout.activity_sign_up);
 
-//        LinearLayout linearLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.activity_sign_up,null);
-
-        // TODO: 2018-04-11 LayoutInflater 개념 공부하기 북마크 참고
-        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        LinearLayout linearLayout = (LinearLayout) layoutInflater.inflate(R.layout.activity_sign_up, null);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT);
-        addContentView(linearLayout, layoutParams);
+//        // TODO: 2018-04-11 LayoutInflater 개념 공부하기 북마크 참고
+//        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        LinearLayout linearLayout = (LinearLayout) layoutInflater.inflate(R.layout.activity_sign_up, null);
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.MATCH_PARENT,
+//                LinearLayout.LayoutParams.MATCH_PARENT);
+//        addContentView(linearLayout, layoutParams);
 
 //        email = findViewById(R.id.signUpActivity_editText_email);
 //        pw = findViewById(R.id.signUpActivity_editText_pw);
@@ -47,6 +45,9 @@ public class SignUpActivity extends AppCompatActivity {
 //        onClick(signUp, SignInActivity.class);
 
         // TODO: 2018-04-10 시간이 된다면 비밀번호와 비밀번호 확인을 실시간으로 비교해주는 기능을 추가하면 좋을듯
+
+        Button button = (Button) findViewById(R.id.signUpActivity_button_signUp);
+        button.bringToFront();
     }
 
     public void onClick(Button button, final Class neededClass) {
