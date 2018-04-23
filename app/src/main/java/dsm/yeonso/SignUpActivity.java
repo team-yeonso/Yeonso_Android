@@ -11,14 +11,20 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-public class SignUpActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Retrofit;
 
+import static dsm.yeonso.ApiInterface.API_URL;
+
+public class SignUpActivity extends AppCompatActivity {
+    private Retrofit retrofit;
+    private ApiInterface apiInterface;
     private EditText email;
+    private EditText emailCodeCheck; // 인증번호 입력
     private EditText pw;
     private EditText pwCheck;
-    private EditText emailCodeCheck;
-    private Button emailAuth;
-    private Button emailCode;
+    private Button AuthCodeSend; // 아이디(=이메일) 인증 코드 전송
+    private Button AuthCodeCheck; // 아이디(=이메일) 인증 코드 전송
     private Button signUp;
 
     @Override
@@ -26,28 +32,33 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-//        // TODO: 2018-04-11 LayoutInflater 개념 공부하기 북마크 참고
-//        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LinearLayout linearLayout = (LinearLayout) layoutInflater.inflate(R.layout.activity_sign_up, null);
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT);
-//        addContentView(linearLayout, layoutParams);
+        email = (EditText) findViewById(R.id.signUpActivity_editText_email);
+        emailCodeCheck = (EditText) findViewById(R.id.signUpActivity_editText_authCode_check);
+        pw = (EditText) findViewById(R.id.signUpActivity_editText_pw);
+        pwCheck = (EditText) findViewById(R.id.signUpActivity_editText_pw_check);
+        AuthCodeSend = (Button) findViewById(R.id.signUpActivity_button_auth_code_send);
+        AuthCodeCheck = (Button) findViewById(R.id.signUpActivity_button_authCode_check);
+        signUp = (Button) findViewById(R.id.signUpActivity_button_signUp);
 
-//        email = findViewById(R.id.signUpActivity_editText_email);
-//        pw = findViewById(R.id.signUpActivity_editText_pw);
-//        pwCheck = findViewById(R.id.signUpActivity_editText_pw_check);
-//        emailCodeCheck = findViewById(R.id.signUpActivity_editText_eamil_codeCheck);
-//        emailAuth = findViewById(R.id.signUpActivity_button_email_authentication);
-//        emailCode = findViewById(R.id.signUpActivity_button_email_code);
-//        signUp = findViewById(R.id.signUpActivity_button_signUp);
-//
 //        onClick(signUp, SignInActivity.class);
 
         // TODO: 2018-04-10 시간이 된다면 비밀번호와 비밀번호 확인을 실시간으로 비교해주는 기능을 추가하면 좋을듯
 
-        Button button = (Button) findViewById(R.id.signUpActivity_button_signUp);
-        button.bringToFront();
+        // TODO: 2018-04-23 retrofit 코드 기존과 다르게 수정했으니 오류 발생 시 확인 바람 
+        signUp.setOnClickListener(new View.OnClickListener() {
+            String email;
+            String pw;
+            @Override
+            public void onClick(View view) {
+                retrofit = new Retrofit.Builder()
+                        .baseUrl(API_URL)
+                        .build();
+                apiInterface = retrofit.create(ApiInterface.class);
+
+                Call<Void> call = apiInterface.signUp(email,pw);
+
+            }
+        });
     }
 
     public void onClick(Button button, final Class neededClass) {
