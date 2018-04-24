@@ -8,14 +8,37 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MainFragmentViewPager mainFragmentViewPager;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.mainActivity_viewPager);
+        tabLayout = (TabLayout) findViewById(R.id.mainActivity_tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.mainActivity_viewPager);
 
-        MainFragmentViewPager adapter = new MainFragmentViewPager(this, getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
+        mainFragmentViewPager = new MainFragmentViewPager(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(mainFragmentViewPager);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 }

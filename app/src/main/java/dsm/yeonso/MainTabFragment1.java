@@ -14,16 +14,10 @@ import android.widget.TextView;
 public class MainTabFragment1 extends Fragment {
 
 
-    public MainTabFragment1() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.main_tab_fragment_1, container, false);
-        return view;
+        return inflater.inflate(R.layout.main_tab_fragment_1,container,false);
     }
 
 }
