@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="Navigation">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
