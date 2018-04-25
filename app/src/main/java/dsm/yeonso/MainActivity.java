@@ -1,6 +1,7 @@
 package dsm.yeonso;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private Intent intent;
     private MainFragmentViewPager mainFragmentViewPager;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -63,12 +65,28 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // TODO: 2018-04-24 글씨 색 바꾸기 
+        // itemIconTintList를 null로 함으로써 본래의 색깔이 드러나게 함.
+        navigationView.setItemIconTintList(null);
+
+        // 글씨 색 바꾸기 완료함.
         Menu menu = navigationView.getMenu();
-        MenuItem menuItem= menu.findItem(R.id.nav_camera);
-        SpannableString s = new SpannableString(menuItem.getTitle());
-        s.setSpan(new TextAppearanceSpan(this, R.style.Navigation),0,s.length(),0);
-        menuItem.setTitle(s);
+
+        MenuItem myPage = menu.findItem(R.id.nav_myPage);
+        SpannableString sMyPage = new SpannableString(myPage.getTitle());
+        sMyPage.setSpan(new TextAppearanceSpan(this, R.style.Navigation),0,sMyPage.length(),0);
+        myPage.setTitle(sMyPage);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        MenuItem chatList = menu.findItem(R.id.nav_chatList);
+        SpannableString sChatList = new SpannableString(chatList.getTitle());
+        sChatList.setSpan(new TextAppearanceSpan(this, R.style.Navigation),0,sChatList.length(),0);
+        chatList.setTitle(sChatList);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        MenuItem setting = menu.findItem(R.id.nav_setting);
+        SpannableString sSetting = new SpannableString(setting.getTitle());
+        sSetting.setSpan(new TextAppearanceSpan(this, R.style.Navigation),0,sSetting.length(),0);
+        setting.setTitle(sSetting);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -88,12 +106,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.nav_myPage) {
+//            intent = new Intent(getApplicationContext(), MyPageActivity.class);
+//            startActivity(new Intent(getApplicationContext(),MyPageActivity.class));
+            intent = new Intent(getApplicationContext(), MyPageActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_chatList) {
+            intent = new Intent(getApplicationContext(),ChatListActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_setting) {
+            intent = new Intent(getApplicationContext(),SettingActivity.class);
+            startActivity(intent);
         } 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

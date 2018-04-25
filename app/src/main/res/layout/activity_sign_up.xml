@@ -46,7 +46,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="이메일"
-                        android:textColor="@color/colorTextView" />
+                        android:textColor="@color/gray" />
 
                     <EditText
                         android:id="@+id/signUpActivity_editText_email"
@@ -98,7 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="인증번호"
-                        android:textColor="@color/colorTextView" />
+                        android:textColor="@color/gray" />
 
                     <EditText
                         android:id="@+id/signUpActivity_editText_authCode_check"
@@ -150,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="비밀번호"
-                        android:textColor="@color/colorTextView" />
+                        android:textColor="@color/gray" />
 
                     <EditText
                         android:id="@+id/signUpActivity_editText_pw"
@@ -177,7 +177,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="비밀번호 확인"
-                        android:textColor="@color/colorTextView" />
+                        android:textColor="@color/gray" />
 
                     <EditText
                         android:id="@+id/signUpActivity_editText_pw_check"
