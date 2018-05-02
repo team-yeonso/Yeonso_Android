@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="job_first">
-        <item>전체</item>
+        <item>대분류</item>
         <item>일반</item>
         <item>전문직</item>
         <item>의료직</item>
@@ -13,7 +13,7 @@
     </string-array>
 
     <string-array name="job_second_all">
-        <item>전체</item>
+        <item>소분류</item>
     </string-array>
 
     <string-array name="job_second_general">
@@ -47,74 +47,69 @@
     </string-array>
 
     <string-array name="job_second_medical_care">
-        <item>무직</item>
-        <item>학생</item>
-        <item>대기업 직원</item>
-        <item>중견기업 직원</item>
-        <item>중소기업 직원</item>
-        <item>벤쳐기업 직원</item>
-        <item>소기업 직원</item>
-        <item>공기업 직원</item>
+        <item>의사</item>
+        <item>약사</item>
+        <item>한의사</item>
+        <item>수의사</item>
+        <item>간호사</item>
+        <item>간호조무사</item>
+        <item>의료기사</item>
+        <item>사무, 원무, 코디</item>
         <item>기타</item>
     </string-array>
 
     <string-array name="job_second_education">
-        <item>전체</item>
-        <item>일반</item>
-        <item>전문직</item>
-        <item>의료직</item>
-        <item>교육직</item>
-        <item>공무원</item>
-        <item>사업가</item>
-        <item>금융직</item>
-        <item>연구, 기술직</item>
+        <item>유치원, 보육</item>
+        <item>초,중,고 교사</item>
+        <item>입시, 보습, 속셈학원</item>
+        <item>외국어, 어학원</item>
+        <item>학습지, 과외</item>
+        <item>전문직업, IT강사</item>
+        <item>대학교수</item>
+        <item>관리, 운영, 상담</item>
+        <item>기타</item>
     </string-array>
 
     <string-array name="job_second_official">
-        <item>전체</item>
-        <item>일반</item>
-        <item>전문직</item>
-        <item>의료직</item>
-        <item>교육직</item>
-        <item>공무원</item>
-        <item>사업가</item>
-        <item>금융직</item>
-        <item>연구, 기술직</item>
+        <item>고위공무원</item>
+        <item>일반공무원</item>
+        <item>경찰직공무원</item>
+        <item>소방직공무원</item>
+        <item>특수경력직 공무원</item>
+        <item>장교, 군인, 부사관</item>
     </string-array>
 
     <string-array name="job_second_businessman">
-        <item>전체</item>
-        <item>일반</item>
-        <item>전문직</item>
-        <item>의료직</item>
-        <item>교육직</item>
-        <item>공무원</item>
-        <item>사업가</item>
-        <item>금융직</item>
-        <item>연구, 기술직</item>
+        <item>농수산업</item>
+        <item>제조업</item>
+        <item>도소매</item>
+        <item>숙박업</item>
+        <item>외식업</item>
+        <item>운수, 창고업</item>
+        <item>IT, 웹, 통신</item>
+        <item>부동산업</item>
+        <item>서비스업</item>
+        <item>기타</item>
     </string-array>
 
     <string-array name="job_second_financial_business">
-        <item>전체</item>
-        <item>일반</item>
-        <item>전문직</item>
-        <item>의료직</item>
-        <item>교육직</item>
-        <item>공무원</item>
-        <item>사업가</item>
-        <item>금융직</item>
-        <item>연구, 기술직</item>
+        <item>펀드 매니저</item>
+        <item>은행원</item>
+        <item>금융감독원</item>
+        <item>증권사직원</item>
+        <item>보험사직원</item>
+        <item>기타</item>
     </string-array>
 
     <string-array name="job_second_research_technical">
-        <item>전체</item>
-        <item>일반</item>
-        <item>전문직</item>
-        <item>의료직</item>
-        <item>교육직</item>
-        <item>공무원</item>
-        <item>사업가</item>
-        <item>금융직</item>
-        <item>연구, 기술직</item>
+        <item>IT개발 연구원</item>
+        <item>과학 연구원</item>
+        <item>기계분야 기술자</item>
+        <item>전기, 전자 기술자</item>
+        <item>건축, 건설 기술자</item>
+        <item>기술정보수집 연구원</item>
+        <item>제품개발 연구원</item>
+        <item>제품 및 설계 연구</item>
+        <item>기타</item>
     </string-array>
 </resources>
