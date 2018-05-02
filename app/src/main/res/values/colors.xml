@@ -7,4 +7,7 @@
     <color name="black">#000000</color>
     <color name="colorEditText">#B3B3B3</color>
     <color name="gray">#666666</color>
+    <color name="gender">#CCFFFF</color>
+    <color name="deep_gray">#333333</color>
+    <color name="arrow">#999999</color>
 </resources>

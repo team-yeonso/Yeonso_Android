@@ -7,8 +7,4 @@
     <style name="Navigation">
         <item name="android:textColor">@color/gray</item>
     </style>
-
-    <style name="Custom">
-        <item name="android:textColor">@color/black</item>
-    </style>
 </resources>

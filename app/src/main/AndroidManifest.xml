@@ -24,8 +24,8 @@
         <activity android:name=".MyPageActivity" />
         <activity android:name=".ChatListActivity" />
         <activity android:name=".SettingActivity" />
-        <activity android:name=".GenderActivity">
-        </activity>
+        <activity android:name=".GenderActivity"></activity>
+        <activity android:name=".BirthActivity"></activity>
     </application>
 
 </manifest>
