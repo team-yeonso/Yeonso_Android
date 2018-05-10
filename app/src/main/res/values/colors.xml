@@ -7,7 +7,16 @@
     <color name="black">#000000</color>
     <color name="colorEditText">#B3B3B3</color>
     <color name="gray">#666666</color>
-    <color name="gender">#CCFFFF</color>
     <color name="deep_gray">#333333</color>
     <color name="arrow">#999999</color>
+
+    <color name="personal1">#CCFFFF</color>
+    <color name="personal2">#D1FAFE</color>
+    <color name="personal3">#D5F6FE</color>
+    <color name="personal4">#DAF1FF</color>
+    <color name="personal5">#E0EAFF</color>
+    <color name="personal6">#E3E8FF</color>
+    <color name="personal7">#E8E4FE</color>
+    <color name="personal8">#EDDFFF</color>
+    <color name="personal9">#F0DBFF</color>
 </resources>

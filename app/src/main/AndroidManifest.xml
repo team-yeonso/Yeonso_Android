@@ -14,18 +14,25 @@
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main2">
+            android:label="@string/title_activity_main2" />
+        <activity android:name=".MyPageActivity" />
+        <activity android:name=".ChatListActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".Personal1Activity" />
+        <activity android:name=".Personal2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyPageActivity" />
-        <activity android:name=".ChatListActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".GenderActivity"></activity>
-        <activity android:name=".BirthActivity"></activity>
+        <activity android:name=".Personal3Activity" />
+        <activity android:name=".Personal4Activity" />
+        <activity android:name=".Personal5Activity" />
+        <activity android:name=".Personal6Activity" />
+        <activity android:name=".Personal7Activity" />
+        <activity android:name=".Personal8Activity" />
+        <activity android:name=".Personal9Activity"></activity>
     </application>
 
 </manifest>

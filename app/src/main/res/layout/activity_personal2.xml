@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal2"
+    android:orientation="vertical"
+    tools:context="dsm.yeonso.Personal1Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:text="02"
+            android:textColor="@color/black"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:text="생년월일을\n입력해주세요."
+            android:textColor="@color/deep_gray"
+            android:textSize="30sp" />
+
+        <DatePicker
+            android:id="@+id/birthActivity_datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"></DatePicker>
+
+        <TextView
+            android:id="@+id/birthActivity_textView_age"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/white"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="만 17세 입니다." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/birthActivity_imageButton_before"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_keyboard_arrow_left_black"
+            android:backgroundTint="@color/arrow" />
+
+        <ImageButton
+            android:id="@+id/birthActivity_imageButton_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black"
+            android:backgroundTint="@color/arrow" />
+    </LinearLayout>
+</LinearLayout>
