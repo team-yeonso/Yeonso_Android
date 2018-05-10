@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal1"
+    android:orientation="vertical"
+    tools:context="dsm.yeonso.Personal1Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:text="01"
+            android:textColor="@color/black"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:text="성별을\n입력해주세요."
+            android:textColor="@color/deep_gray"
+            android:textSize="30sp" />
+
+        <RadioGroup
+            android:id="@+id/genderActivity_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="남"
+                android:textColor="@color/deep_gray"
+                android:textSize="25sp" />
+
+            <RadioButton
+                android:id="@+id/genderActivity_radioButton_boy"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@drawable/radio_button_gender" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="10dp"
+                android:text="여"
+                android:textColor="@color/deep_gray"
+                android:textSize="25sp" />
+
+            <RadioButton
+                android:id="@+id/genderActivity_radioButton_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@drawable/radio_button_gender" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/genderActivity_button_before"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_keyboard_arrow_left_black"
+            android:backgroundTint="@color/arrow" />
+
+        <ImageButton
+            android:id="@+id/genderActivity_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black"
+            android:backgroundTint="@color/arrow" />
+    </LinearLayout>
+</LinearLayout>

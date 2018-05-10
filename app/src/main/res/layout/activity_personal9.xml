@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal9"
+    android:orientation="vertical"
+    tools:context="dsm.yeonso.Personal9Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:text="09"
+            android:textColor="@color/black"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:text="자신을 PR할 수 있는\n한 줄 소개를 적어주세요."
+            android:textColor="@color/deep_gray"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:id="@+id/genderActivity_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            //text 입력 칸 만들어야 함
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="- 사진에 따라 다른 결과가 나올 수 있습니다." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/genderActivity_button_before"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_keyboard_arrow_left_black"
+            android:backgroundTint="@color/arrow" />
+
+        <ImageButton
+            android:id="@+id/genderActivity_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black"
+            android:backgroundTint="@color/arrow" />
+    </LinearLayout>
+</LinearLayout>
+
+
