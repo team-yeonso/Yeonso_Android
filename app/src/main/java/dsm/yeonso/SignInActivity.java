@@ -28,6 +28,7 @@ public class SignInActivity extends AppCompatActivity {
     private Button signIn;
     private Button signUp;
     private TextView findPw;
+    private TextView findId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,72 +40,77 @@ public class SignInActivity extends AppCompatActivity {
         signIn = (Button) findViewById(R.id.signInActivity_button_signIn);
         signUp = (Button) findViewById(R.id.signInActivity_button_signUp);
         findPw = (TextView) findViewById(R.id.signInActivity_textView_find_pw);
+        findId = (TextView) findViewById(R.id.signInActivity_textView_find_id);
 
-        // TODO: 2018-04-24 **아이디 찾기
-        // TODO: 2018-04-24 **비밀번호 찾기
+        // TODO: 2018-05-15 로그인 1회 실패하면 (*로그인 lock : 30s)
+        // TODO: 2018-05-15 로그인 3회 실패하면 문구가 뜨면서 30s, 29s, 28s로 줄어든다.
 
-        // TODO: 2018-04-10 로그인 3회 실패시 제한
+        signIn.setOnClickListener(view -> {
+            if (email.length() == 0) {
+                Log.d(TAG, "email is empty");
+                Snackbar.make(view, "이메일을 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                    }
+                }).show();
+            } else if (pw.length() == 0) {
+                Log.d(TAG, "pw is empty");
+                Snackbar.make(view, "비밀번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (email.length() == 0) {
-                    Log.d(TAG, "email is empty");
-                    Snackbar.make(view, "이메일을 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
+                    }
+                }).show();
+            } else {
+                retrofit = new Retrofit.Builder()
+                        .baseUrl(ApiInterface.API_URL)
+                        .build();
+                apiInterface = retrofit.create(ApiInterface.class);
+
+                Call<Void> call = apiInterface.signIn(email.getText().toString(), pw.getText().toString());
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        int statusCode = response.code();
+                        if (statusCode == 201) {
+                            // created
+                            finish();
+                            intent = new Intent(SignInActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else if (statusCode == 400) {
+                            // 로그인 실패
+                        } else if (statusCode == 401) {
+                            // unauthorized
+                        } else if (statusCode == 403) {
+                            // forbidden
+                        } else if (statusCode == 404) {
+                            // not found
                         }
-                    }).show();
-                } else if (pw.length() == 0) {
-                    Log.d(TAG, "pw is empty");
-                    Snackbar.make(view, "비밀번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
+                    }
 
-                        }
-                    }).show();
-                } else {
-                    retrofit = new Retrofit.Builder()
-                            .baseUrl(ApiInterface.API_URL)
-                            .build();
-                    apiInterface = retrofit.create(ApiInterface.class);
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
 
-                    Call<Void> call = apiInterface.signIn(email.getText().toString(), pw.getText().toString());
-                    call.enqueue(new Callback<Void>() {
-                        @Override
-                        public void onResponse(Call<Void> call, Response<Void> response) {
-                            int statusCode = response.code();
-                            if (statusCode == 201) {
-                                // created
-                                finish();
-                                intent = new Intent(SignInActivity.this, MainActivity.class);
-                                startActivity(intent);
-                            } else if (statusCode == 400) {
-                                // 로그인 실패
-                            } else if (statusCode == 401) {
-                                // unauthorized
-                            } else if (statusCode == 403) {
-                                // forbidden
-                            } else if (statusCode == 404) {
-                                // not found
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<Void> call, Throwable t) {
-
-                        }
-                    });
-                }
+                    }
+                });
             }
         });
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(intent);
-            }
+        signUp.setOnClickListener(v -> {
+            intent = new Intent(SignInActivity.this, SignUpActivity.class);
+            startActivity(intent);
         });
+
+        findId.setOnClickListener(v -> {
+            intent = new Intent(SignInActivity.this, FindIdActivity.class);
+            startActivity(intent);
+        });
+
+        findPw.setOnClickListener(v -> {
+            intent = new Intent(SignInActivity.this, FindPwActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 }

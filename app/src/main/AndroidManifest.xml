@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".SplashActivity" />
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignInActivity">
+
+        </activity>
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".MainActivity"
@@ -20,11 +22,7 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".Personal1Activity" />
         <activity android:name=".Personal2Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Personal3Activity" />
         <activity android:name=".Personal4Activity" />
@@ -32,7 +30,15 @@
         <activity android:name=".Personal6Activity" />
         <activity android:name=".Personal7Activity" />
         <activity android:name=".Personal8Activity" />
-        <activity android:name=".Personal9Activity"></activity>
+        <activity android:name=".Personal9Activity" />
+        <activity android:name=".FindIdActivity" />
+        <activity android:name=".FindPwActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
