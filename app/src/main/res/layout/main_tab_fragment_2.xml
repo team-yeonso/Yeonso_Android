@@ -191,7 +191,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/rounded_button_sign_up_complicate"
+                android:background="@drawable/rounded_button_light_purple"
                 android:elevation="50dp"
                 android:text="검색"
                 android:textColor="@color/white"/>
