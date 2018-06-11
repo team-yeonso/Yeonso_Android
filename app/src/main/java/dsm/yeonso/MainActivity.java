@@ -1,6 +1,5 @@
 package dsm.yeonso;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -16,11 +15,13 @@ import android.text.style.TextAppearanceSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import dsm.yeonso.Adapter.MainFragmentViewPagerAdapter;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Intent intent;
-    private MainFragmentViewPager mainFragmentViewPager;
+    private MainFragmentViewPagerAdapter mainFragmentViewPager;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout = (TabLayout) findViewById(R.id.content_main2_tabLayout);
         viewPager = (ViewPager) findViewById(R.id.content_main2_viewPager);
 
-        mainFragmentViewPager = new MainFragmentViewPager(getSupportFragmentManager(),tabLayout.getTabCount());
+        mainFragmentViewPager = new MainFragmentViewPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(mainFragmentViewPager);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 

@@ -1,4 +1,4 @@
-package dsm.yeonso;
+package dsm.yeonso.Network;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/personal3"
     android:orientation="vertical"
-    tools:context="dsm.yeonso.Personal3Activity">
+    tools:context="dsm.yeonso.Personal.Personal3Activity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,19 +1,21 @@
-package dsm.yeonso;
+package dsm.yeonso.Adapter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import dsm.yeonso.Fragment.MainTabFragment1;
+import dsm.yeonso.Fragment.MainTabFragment2;
 
 /**
  * Created by dsm2016 on 2018-04-18.
  */
 
-public class MainFragmentViewPager extends FragmentStatePagerAdapter {
+public class MainFragmentViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private int tabCount;
 
-    public MainFragmentViewPager(FragmentManager fm, int tabCount) {
+    public MainFragmentViewPagerAdapter(FragmentManager fm, int tabCount) {
         super(fm);
         this.tabCount = tabCount;
     }

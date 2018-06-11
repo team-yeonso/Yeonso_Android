@@ -1,4 +1,4 @@
-package dsm.yeonso;
+package dsm.yeonso.Personal;
 
 import android.content.Intent;
 import android.os.Build;
@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Calendar;
+
+import dsm.yeonso.R;
 
 public class Personal2Activity extends AppCompatActivity {
 

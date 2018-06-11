@@ -1,13 +1,15 @@
-package dsm.yeonso;
+package dsm.yeonso.Personal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Personal4Activity extends AppCompatActivity {
+import dsm.yeonso.R;
+
+public class Personal8Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal4);
+        setContentView(R.layout.activity_personal8);
     }
 }

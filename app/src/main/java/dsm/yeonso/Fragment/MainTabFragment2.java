@@ -1,4 +1,4 @@
-package dsm.yeonso;
+package dsm.yeonso.Fragment;
 
 
 import android.content.res.Resources;
@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
+
+import dsm.yeonso.R;
 
 /**
  * A simple {@link Fragment} subclass.

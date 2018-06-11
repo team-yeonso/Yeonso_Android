@@ -1,4 +1,4 @@
-package dsm.yeonso;
+package dsm.yeonso.Personal;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+
+import dsm.yeonso.R;
+import dsm.yeonso.SignUpActivity;
 
 public class Personal1Activity extends AppCompatActivity {
 
