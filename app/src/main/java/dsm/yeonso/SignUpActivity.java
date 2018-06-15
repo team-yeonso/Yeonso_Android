@@ -57,6 +57,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         authLayout.setVisibility(View.GONE);
         doneSignUp.setVisibility(View.GONE);
+
+        // TODO: 2018-04-23 retrofit 코드 기존과 다르게 수정했으니 오류 발생 시 확인 바람
         sendAuthNumber.setOnClickListener(v -> {
             if (email.length() == 0) {
                 Log.d(TAG, "email is empty");
@@ -91,48 +93,58 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 }).show();
             } else {
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(API_URL)
-                        .build();
-                apiInterface = retrofit.create(ApiInterface.class);
+                signUpLayout.setVisibility(View.GONE);
+                authLayout.setVisibility(View.VISIBLE);
+                sendAuthNumber.setVisibility(View.GONE);
+                doneSignUp.setVisibility(View.VISIBLE);
 
-                Call<Void> call = apiInterface.signUp(email.getText().toString(), pw.getText().toString());
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        int statusCode = response.code();
-                        if (statusCode == 200) {
-                            // ok
-                        } else if (statusCode == 201) {
-                            // 회원가입 성공
-                            finish();
-                            intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                            startActivity(intent);
-                        } else if (statusCode == 400) {
-                            // 잘못된 요청
-                        } else if (statusCode == 401) {
-                            //Unauthorized
-                        } else if (statusCode == 403) {
-                            //Forbidden
-                        } else if (statusCode == 404) {
-                            // Not Found
-                        }
-                    }
+                doneSignUp.setOnClickListener(view -> {
+                    if (authNumber.length() == 0) {
+                        Log.d(TAG, "name is empty");
+                        Snackbar.make(view, "인증번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
 
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        Log.d(TAG, "onFailure: " + t.getMessage());
+                            }
+                        }).show();
+                    } else {
+                        retrofit = new Retrofit.Builder()
+                                .baseUrl(API_URL)
+                                .build();
+                        apiInterface = retrofit.create(ApiInterface.class);
+
+                        Call<Void> call = apiInterface.signUp(email.getText().toString(), pw.getText().toString());
+                        call.enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                int statusCode = response.code();
+                                if (statusCode == 200) {
+                                    // ok
+                                } else if (statusCode == 201) {
+                                    // 회원가입 성공
+                                    finish();
+                                    intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                                    startActivity(intent);
+                                } else if (statusCode == 400) {
+                                    // 잘못된 요청
+                                } else if (statusCode == 401) {
+                                    //Unauthorized
+                                } else if (statusCode == 403) {
+                                    //Forbidden
+                                } else if (statusCode == 404) {
+                                    // Not Found
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+                                Log.d(TAG, "onFailure: " + t.getMessage());
+                            }
+                        });
                     }
                 });
             }
-
-            signUpLayout.setVisibility(View.GONE);
-            authLayout.setVisibility(View.VISIBLE);
-            sendAuthNumber.setVisibility(View.GONE);
-            doneSignUp.setVisibility(View.VISIBLE);
         });
-
-        // TODO: 2018-04-23 retrofit 코드 기존과 다르게 수정했으니 오류 발생 시 확인 바람
     }
 
 }
