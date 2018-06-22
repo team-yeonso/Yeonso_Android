@@ -61,37 +61,37 @@ public class SignInActivity extends AppCompatActivity {
                     }
                 }).show();
             } else {
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(ApiInterface.API_URL)
-                        .build();
-                apiInterface = retrofit.create(ApiInterface.class);
-
-                Call<Void> call = apiInterface.signIn(email.getText().toString(), pw.getText().toString());
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        int statusCode = response.code();
-                        if (statusCode == 201) {
-                            // created
-                            finish();
-                            intent = new Intent(SignInActivity.this, MainActivity.class);
-                            startActivity(intent);
-                        } else if (statusCode == 400) {
-                            // 로그인 실패
-                        } else if (statusCode == 401) {
-                            // unauthorized
-                        } else if (statusCode == 403) {
-                            // forbidden
-                        } else if (statusCode == 404) {
-                            // not found
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-
-                    }
-                });
+//                retrofit = new Retrofit.Builder()
+//                        .baseUrl(ApiInterface.API_URL)
+//                        .build();
+//                apiInterface = retrofit.create(ApiInterface.class);
+//
+//                Call<Void> call = apiInterface.signIn(email.getText().toString(), pw.getText().toString());
+//                call.enqueue(new Callback<Void>() {
+//                    @Override
+//                    public void onResponse(Call<Void> call, Response<Void> response) {
+//                        int statusCode = response.code();
+//                        if (statusCode == 201) {
+//                            // created
+//                            finish();
+//                            intent = new Intent(SignInActivity.this, MainActivity.class);
+//                            startActivity(intent);
+//                        } else if (statusCode == 400) {
+//                            // 로그인 실패
+//                        } else if (statusCode == 401) {
+//                            // unauthorized
+//                        } else if (statusCode == 403) {
+//                            // forbidden
+//                        } else if (statusCode == 404) {
+//                            // not found
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Void> call, Throwable t) {
+//
+//                    }
+//                });
             }
         });
 
