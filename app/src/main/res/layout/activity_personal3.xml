@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:text="생년월일을\n입력해주세요."
+            android:text="키를\n입력해주세요."
             android:textColor="@color/deep_gray"
             android:textSize="30sp" />
     </LinearLayout>
@@ -46,12 +46,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="키"/>
-        
+
         <EditText
-            android:hint="키 입력"
-            android:layout_weight="1"
+            android:id="@+id/bodySizeActivity_editText_height"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="키 입력" />
         
         <TextView
             android:layout_weight="0.2"
@@ -91,10 +92,11 @@
             android:text="몸무게"/>
 
         <EditText
-            android:hint="몸무게 입력"
-            android:layout_weight="1"
+            android:id="@+id/bodySizeActivity_editText_weight"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="몸무게 입력" />
 
         <TextView
             android:layout_weight="0.2"
@@ -110,14 +112,14 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/birthActivity_imageButton_before"
+            android:id="@+id/bodySizeActivity_imageButton_before"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_keyboard_arrow_left_black"
             android:backgroundTint="@color/arrow" />
 
         <ImageButton
-            android:id="@+id/birthActivity_imageButton_next"
+            android:id="@+id/bodySizeActivity_imageButton_next"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"

@@ -78,14 +78,14 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/genderActivity_button_before"
+            android:id="@+id/genderActivity_imageButton_before"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_keyboard_arrow_left_black"
             android:backgroundTint="@color/arrow" />
 
         <ImageButton
-            android:id="@+id/genderActivity_next"
+            android:id="@+id/genderActivity_imageButton_next"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"

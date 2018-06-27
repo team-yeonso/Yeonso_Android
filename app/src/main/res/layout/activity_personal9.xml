@@ -32,28 +32,48 @@
             android:textColor="@color/deep_gray"
             android:textSize="30sp" />
 
-        <LinearLayout
-            android:id="@+id/genderActivity_radioGroup"
+        <EditText
+            android:id="@+id/PRActivity_editText_text"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="50dp"
+            android:maxLength="50" />
 
-            //text 입력 칸 만들어야 함
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp">
+
+            <TextView
+                android:id="@+id/PRActivity_Textview_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:text="0"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:text="/50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="- 사진에 따라 다른 결과가 나올 수 있습니다." />
-    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,14 +82,14 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/genderActivity_button_before"
+            android:id="@+id/PRActivity_imageButton_before"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_keyboard_arrow_left_black"
             android:backgroundTint="@color/arrow" />
 
         <ImageButton
-            android:id="@+id/genderActivity_next"
+            android:id="@+id/PRActivity_imageButton_next"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"
