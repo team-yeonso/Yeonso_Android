@@ -32,8 +32,7 @@
             android:textColor="@color/deep_gray"
             android:textSize="30sp" />
 
-        <LinearLayout
-            android:id="@+id/personal7Activity_radioGroup"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="30dp"
@@ -41,27 +40,37 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <ImageView
+                android:id="@+id/pictureActivity_imageView_input"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:background="@color/white" />
-        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/pictureActivity_imageView_camara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera_alt_black_50dp" />
+
+        </FrameLayout>
 
         <LinearLayout
-            android:layout_weight="1"
-            android:id="@+id/personal7Activity_information"
+            android:id="@+id/pictureActivity_information"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="- 다른 사람의 사진을 불법으로 도용할 경우 명예훼손\n  등으로 법적 처벌을 받을 수 있습니다.\n- 보정이 과도하거나 흐릿한 사진은\n  결과가 이상하게 나올 수도 있습니다.\n- 2MB가 넘는 파일을 올릴 수 없습니다."/>
+                android:text="- 다른 사람의 사진을 불법으로 도용할 경우 명예훼손\n  등으로 법적 처벌을 받을 수 있습니다.\n- 보정이 과도하거나 흐릿한 사진은\n  결과가 이상하게 나올 수도 있습니다.\n- 2MB가 넘는 파일을 올릴 수 없습니다." />
         </LinearLayout>
     </LinearLayout>
 
@@ -72,14 +81,14 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/genderActivity_button_before"
+            android:id="@+id/pictureActivity_imageButton_before"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_keyboard_arrow_left_black"
             android:backgroundTint="@color/arrow" />
 
         <ImageButton
-            android:id="@+id/genderActivity_next"
+            android:id="@+id/pictureActivity_imageButton_next"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"

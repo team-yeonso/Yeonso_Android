@@ -23,8 +23,8 @@ public class Personal1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal1);
 
-        before = (ImageButton) findViewById(R.id.genderActivity_button_before);
-        next = (ImageButton) findViewById(R.id.genderActivity_next);
+        before = (ImageButton) findViewById(R.id.genderActivity_imageButton_before);
+        next = (ImageButton) findViewById(R.id.genderActivity_imageButton_next);
         boy = (RadioButton) findViewById(R.id.genderActivity_radioButton_boy);
         girl = (RadioButton) findViewById(R.id.genderActivity_radioButton_girl);
 

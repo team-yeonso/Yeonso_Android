@@ -55,6 +55,10 @@ public class Personal2Activity extends AppCompatActivity {
             });
         }
 
+        before.setOnClickListener(v->{
+            finish();
+        });
+
         next.setOnClickListener(v -> {
             if (age < 18) {
                 Snackbar.make(v, "만 18세 이상부터 사용이 가능합니다.",Snackbar.LENGTH_SHORT).show();

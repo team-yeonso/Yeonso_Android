@@ -45,7 +45,7 @@
                 android:background="@drawable/spinner">
 
                 <Spinner
-                    android:id="@+id/personal6Activity_address_first"
+                    android:id="@+id/AddressActivity_address_first"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/black"
@@ -61,7 +61,7 @@
                 android:background="@drawable/spinner">
 
                 <Spinner
-                    android:id="@+id/personal6Activity_address_second"
+                    android:id="@+id/AddressActivity_address_second"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/black"
@@ -76,7 +76,7 @@
                 android:background="@drawable/spinner">
 
                 <Spinner
-                    android:id="@+id/personal6Activity_address_third"
+                    android:id="@+id/AddressActivity_address_third"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/black"
@@ -96,14 +96,14 @@
         android:gravity="center">
 
         <ImageButton
-            android:id="@+id/genderActivity_button_before"
+            android:id="@+id/AddressActivity_imageButton_before"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_keyboard_arrow_left_black"
             android:backgroundTint="@color/arrow" />
 
         <ImageButton
-            android:id="@+id/genderActivity_next"
+            android:id="@+id/AddressActivity_imageButton_next"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginLeft="70dp"

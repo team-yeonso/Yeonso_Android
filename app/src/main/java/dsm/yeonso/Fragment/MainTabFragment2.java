@@ -15,13 +15,15 @@ import android.widget.TextView;
 
 import java.lang.reflect.Array;
 
+import dsm.yeonso.Adapter.Spinner_contury;
+import dsm.yeonso.Adapter.Spinner_job;
 import dsm.yeonso.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainTabFragment2 extends Fragment {
-    private Spinner jobFirst, jobSecond;
+    private Spinner jobFirst, jobSecond, addressFirst, addressSecond, addressThird;
     private ArrayAdapter<CharSequence> jobFirstAdapter, jobSecondAdapter;
 
     @Override
@@ -31,8 +33,17 @@ public class MainTabFragment2 extends Fragment {
 
         jobFirst = (Spinner) view.findViewById(R.id.mainTabFragment_job_first);
         jobSecond = (Spinner) view.findViewById(R.id.mainTabFragment_job_second);
+        addressFirst = (Spinner) view.findViewById(R.id.mainTabFragment_address_first);
+        addressSecond = (Spinner) view.findViewById(R.id.mainTabFragment_address_second);
+        addressThird = (Spinner) view.findViewById(R.id.mainTabFragment_address_third);
 
-        jobFirstAdapter = ArrayAdapter.createFromResource(getContext(), R.array.job_first, android.R.layout.simple_spinner_item);
+        Spinner_job x = new Spinner_job(jobFirst, jobSecond,getContext());
+        x.setSpinner();
+
+        Spinner_contury c = new Spinner_contury(addressFirst, addressSecond, addressThird, getContext());
+        c.setSpinner();
+
+        /*jobFirstAdapter = ArrayAdapter.createFromResource(getContext(), R.array.job_first, android.R.layout.simple_spinner_item);
         jobFirst.setAdapter(jobFirstAdapter);
 
         jobFirst.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -180,7 +191,7 @@ public class MainTabFragment2 extends Fragment {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
 
         return view;
 
