@@ -110,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
                 Log.d(TAG, email.getText().toString());
                 Log.d(TAG, name.getText().toString());
                 Log.d(TAG, pw.getText().toString());
-//                Call<Void> call = apiInterface.signUp(email.getText().toString(), name.getText().toString(), pw.getText().toString());
+                Call<Void> call = apiInterface.signUp(email.getText().toString(), name.getText().toString(), pw.getText().toString());
                 Map<String, String> map = new HashMap<>();
                 map.put("email", email.getText().toString());
                 map.put("name", name.getText().toString());
@@ -118,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
 //                RequestBody body = RequestBody.create(MediaType.parse("application/json"), map.toString());
 //                Call<Void> call = apiInterface.signUp(map);
 //                SignUpRequest body = RequestBody.create(MediaType.parse("application/json"),)
-                Call<Void> call = apiInterface.signUp(new SignUpRequest("thgus4618@naver.com", "박소현", "12345"));
+//                Call<Void> call = apiInterface.signUp(new SignUpRequest("thgus4618@naver.com", "박소현", "12345"));
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
