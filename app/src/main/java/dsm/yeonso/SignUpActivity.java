@@ -100,94 +100,98 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
                     }
                 }).show();
             } else {
-                Log.d(TAG, "retrofit start");
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(API_URL)
-                        .build();
-                apiInterface = retrofit.create(ApiInterface.class);
-
-                Log.d(TAG, "retrofit call");
-                Log.d(TAG, email.getText().toString());
-                Log.d(TAG, name.getText().toString());
-                Log.d(TAG, pw.getText().toString());
-                Call<Void> call = apiInterface.signUp(email.getText().toString(), name.getText().toString(), pw.getText().toString());
-                Map<String, String> map = new HashMap<>();
-                map.put("email", email.getText().toString());
-                map.put("name", name.getText().toString());
-                map.put("password", pw.getText().toString());
-//                RequestBody body = RequestBody.create(MediaType.parse("application/json"), map.toString());
-//                Call<Void> call = apiInterface.signUp(map);
-//                SignUpRequest body = RequestBody.create(MediaType.parse("application/json"),)
-//                Call<Void> call = apiInterface.signUp(new SignUpRequest("thgus4618@naver.com", "박소현", "12345"));
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        Log.d(TAG, "onResponse: success");
-                        int statusCode = response.code();
-                        Log.d(TAG, "onResponse: " + String.valueOf(statusCode));
-                        if (statusCode == 201) {
-                            Log.d(TAG, "statusCode is 201");
-                            signUpLayout.setVisibility(View.GONE);
-                            authLayout.setVisibility(View.VISIBLE);
-                            sendAuthNumber.setVisibility(View.GONE);
-                            doneSignUp.setVisibility(View.VISIBLE);
-//                            intent = new Intent(SignUpActivity.this, SignInActivity.class);
-//                            startActivity(intent);
-                            doneSignUp.setOnClickListener(view -> {
-                                if (authNumber.length() == 0) {
-                                    Log.d(TAG, "name is empty");
-                                    Snackbar.make(view, "인증번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-
-                                        }
-                                    }).show();
-                                } else {
-//                                    retrofit = new Retrofit.Builder()
-//                                            .baseUrl(API_URL)
-//                                            .build();
-//                                    apiInterface = retrofit.create(ApiInterface.class);
+                signUpLayout.setVisibility(View.GONE);
+                authLayout.setVisibility(View.VISIBLE);
+                sendAuthNumber.setVisibility(View.GONE);
+                doneSignUp.setVisibility(View.VISIBLE);
+//                Log.d(TAG, "retrofit start");
+//                retrofit = new Retrofit.Builder()
+//                        .baseUrl(API_URL)
+//                        .build();
+//                apiInterface = retrofit.create(ApiInterface.class);
 //
-//                                    Call<Void> call1 = apiInterface.signUp(authNumber.getText().toString());
-//                                    call1.enqueue(new Callback<Void>() {
+//                Log.d(TAG, "retrofit call");
+//                Log.d(TAG, email.getText().toString());
+//                Log.d(TAG, name.getText().toString());
+//                Log.d(TAG, pw.getText().toString());
+//                Call<Void> call = apiInterface.signUp(email.getText().toString(), name.getText().toString(), pw.getText().toString());
+//                Map<String, String> map = new HashMap<>();
+//                map.put("email", email.getText().toString());
+//                map.put("name", name.getText().toString());
+//                map.put("password", pw.getText().toString());
+////                RequestBody body = RequestBody.create(MediaType.parse("application/json"), map.toString());
+////                Call<Void> call = apiInterface.signUp(map);
+////                SignUpRequest body = RequestBody.create(MediaType.parse("application/json"),)
+////                Call<Void> call = apiInterface.signUp(new SignUpRequest("thgus4618@naver.com", "박소현", "12345"));
+//                call.enqueue(new Callback<Void>() {
+//                    @Override
+//                    public void onResponse(Call<Void> call, Response<Void> response) {
+//                        Log.d(TAG, "onResponse: success");
+//                        int statusCode = response.code();
+//                        Log.d(TAG, "onResponse: " + String.valueOf(statusCode));
+//                        if (statusCode == 201) {
+//                            Log.d(TAG, "statusCode is 201");
+//                            signUpLayout.setVisibility(View.GONE);
+//                            authLayout.setVisibility(View.VISIBLE);
+//                            sendAuthNumber.setVisibility(View.GONE);
+//                            doneSignUp.setVisibility(View.VISIBLE);
+////                            intent = new Intent(SignUpActivity.this, SignInActivity.class);
+////                            startActivity(intent);
+//                            doneSignUp.setOnClickListener(view -> {
+//                                if (authNumber.length() == 0) {
+//                                    Log.d(TAG, "name is empty");
+//                                    Snackbar.make(view, "인증번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
 //                                        @Override
-//                                        public void onResponse(Call<Void> call, Response<Void> response) {
-//                                            int statusCode = response.code();
-//                                            if (statusCode == 200) {
-//                                                // 회원가입 성공
-//                                                finish();
-//                                                intent = new Intent(SignUpActivity.this, Personal1Activity.class);
-//                                                startActivity(intent);
-//                                            } else if (statusCode == ERROR_TYPE_INVALID_REQUEST) {
-//                                            } else if (statusCode == ERROR_TYPE_UNAUTHORIZED) {
-//                                            } else if (statusCode == ERROR_TYPE_FORBIDDEN) {
+//                                        public void onClick(View view) {
 //
-//                                            }
 //                                        }
+//                                    }).show();
+//                                } else {
+////                                    retrofit = new Retrofit.Builder()
+////                                            .baseUrl(API_URL)
+////                                            .build();
+////                                    apiInterface = retrofit.create(ApiInterface.class);
+////
+////                                    Call<Void> call1 = apiInterface.signUp(authNumber.getText().toString());
+////                                    call1.enqueue(new Callback<Void>() {
+////                                        @Override
+////                                        public void onResponse(Call<Void> call, Response<Void> response) {
+////                                            int statusCode = response.code();
+////                                            if (statusCode == 200) {
+////                                                // 회원가입 성공
+////                                                finish();
+////                                                intent = new Intent(SignUpActivity.this, Personal1Activity.class);
+////                                                startActivity(intent);
+////                                            } else if (statusCode == ERROR_TYPE_INVALID_REQUEST) {
+////                                            } else if (statusCode == ERROR_TYPE_UNAUTHORIZED) {
+////                                            } else if (statusCode == ERROR_TYPE_FORBIDDEN) {
+////
+////                                            }
+////                                        }
+////
+////                                        @Override
+////                                        public void onFailure(Call<Void> call, Throwable t) {
+////                                            Log.d(TAG, "onFailure: " + t.getMessage());
+////                                        }
+////                                    });
+//                                }
+//                            });
+//                        } else if (statusCode == ERROR_TYPE_INVALID_REQUEST) {
+//                            Log.e(TAG, String.valueOf(ERROR_TYPE_INVALID_REQUEST));
+//                        } else if (statusCode == ERROR_TYPE_UNAUTHORIZED) {
+//                            Log.e(TAG, String.valueOf(ERROR_TYPE_UNAUTHORIZED));
+//                        } else if (statusCode == ERROR_TYPE_FORBIDDEN) {
+//                            Log.e(TAG, String.valueOf(ERROR_TYPE_FORBIDDEN));
+//                        } else if (statusCode == ERROR_TYPE_NOT_FOUND) {
+//                            Log.e(TAG, String.valueOf(ERROR_TYPE_NOT_FOUND));
+//                        }
+//                    }
 //
-//                                        @Override
-//                                        public void onFailure(Call<Void> call, Throwable t) {
-//                                            Log.d(TAG, "onFailure: " + t.getMessage());
-//                                        }
-//                                    });
-                                }
-                            });
-                        } else if (statusCode == ERROR_TYPE_INVALID_REQUEST) {
-                            Log.e(TAG, String.valueOf(ERROR_TYPE_INVALID_REQUEST));
-                        } else if (statusCode == ERROR_TYPE_UNAUTHORIZED) {
-                            Log.e(TAG, String.valueOf(ERROR_TYPE_UNAUTHORIZED));
-                        } else if (statusCode == ERROR_TYPE_FORBIDDEN) {
-                            Log.e(TAG, String.valueOf(ERROR_TYPE_FORBIDDEN));
-                        } else if (statusCode == ERROR_TYPE_NOT_FOUND) {
-                            Log.e(TAG, String.valueOf(ERROR_TYPE_NOT_FOUND));
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        Log.d(TAG, "onFailure: " + t.getMessage());
-                    }
-                });
+//                    @Override
+//                    public void onFailure(Call<Void> call, Throwable t) {
+//                        Log.d(TAG, "onFailure: " + t.getMessage());
+//                    }
+//                });
             }
         });
     }

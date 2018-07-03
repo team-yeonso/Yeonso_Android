@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Yeonso_Android.iml" filepath="$PROJECT_DIR$/Yeonso_Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YeonSo.iml" filepath="$PROJECT_DIR$/YeonSo.iml" />
+      <module fileurl="file://C:\YeonSo\Yeonso_Android.iml" filepath="C:\YeonSo\Yeonso_Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

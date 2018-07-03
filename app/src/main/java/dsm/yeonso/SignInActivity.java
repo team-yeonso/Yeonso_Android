@@ -34,12 +34,12 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        email = (EditText) findViewById(R.id.signInActivity_editText_email);
-        pw = (EditText) findViewById(R.id.signInActivity_editText_pw);
-        signIn = (Button) findViewById(R.id.signInActivity_button_signIn);
-        signUp = (Button) findViewById(R.id.signInActivity_button_signUp);
-        findPw = (TextView) findViewById(R.id.signInActivity_textView_find_pw);
-        findId = (TextView) findViewById(R.id.signInActivity_textView_find_id);
+        email = findViewById(R.id.signInActivity_editText_email);
+        pw = findViewById(R.id.signInActivity_editText_pw);
+        signIn = findViewById(R.id.signInActivity_button_signIn);
+        signUp = findViewById(R.id.signInActivity_button_signUp);
+        findPw = findViewById(R.id.signInActivity_textView_find_pw);
+        findId = findViewById(R.id.signInActivity_textView_find_id);
 
         // TODO: 2018-05-15 로그인 1회 실패하면 (*로그인 lock : 30s)
         // TODO: 2018-05-15 로그인 3회 실패하면 문구가 뜨면서 30s, 29s, 28s로 줄어든다.
