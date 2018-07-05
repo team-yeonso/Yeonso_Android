@@ -29,7 +29,9 @@ public class Personal4Activity extends AppCompatActivity {
         next.setOnClickListener(v->{
             if((yes.isChecked()==false) && (no.isChecked()==false)) {
                 Snackbar.make(v, "선택해주세요.",Snackbar.LENGTH_SHORT).show();
-            } else {
+            }else if(yes.isChecked()) {
+                Snackbar.make(v, "기혼자는 가입할 수 없습니다.", Snackbar.LENGTH_SHORT).show();
+            }else {
                 intent = new Intent(this, Personal5Activity.class);
                 startActivity(intent);
             }

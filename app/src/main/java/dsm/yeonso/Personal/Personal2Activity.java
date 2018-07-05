@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
@@ -60,6 +61,18 @@ public class Personal2Activity extends AppCompatActivity {
         });
 
         next.setOnClickListener(v -> {
+            if (!(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
+                Calendar current = Calendar.getInstance();
+                int currentYear = current.get(Calendar.YEAR);
+                int currentMonth = current.get(Calendar.MONTH);
+                int currentDay = current.get(Calendar.DAY_OF_MONTH);
+                int birthYear = datePicker.getYear();
+                age = currentYear - birthYear;
+                if (birthYear * 100 + birthYear > currentMonth * 100 + currentDay) {
+                    age--;
+                }
+            }
+
             if (age < 18) {
                 Snackbar.make(v, "만 18세 이상부터 사용이 가능합니다.",Snackbar.LENGTH_SHORT).show();
             } else {

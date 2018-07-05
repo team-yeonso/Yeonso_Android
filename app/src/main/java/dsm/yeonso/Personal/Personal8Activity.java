@@ -24,6 +24,7 @@ public class Personal8Activity extends AppCompatActivity {
 
         before = (ImageButton) findViewById(R.id.resultActivity_imageButton_before);
         next = (ImageButton) findViewById(R.id.resultActivity_imageButton_next);
+
         name = (TextView) findViewById(R.id.resultActivity_textView_name);
         percent = (TextView) findViewById(R.id.resultActivity_textView_percent);
         picture = (CircleImageView) findViewById(R.id.resultActivity_CircleImageView);

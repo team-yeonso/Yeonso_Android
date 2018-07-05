@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
         authLayout.setVisibility(View.GONE);
         doneSignUp.setVisibility(View.GONE);
 
-        // TODO: 2018-04-23 retrofit 코드 기존과 다르게 수정했으니 오류 발생 시 확인 바람
+        /*// TODO: 2018-04-23 retrofit 코드 기존과 다르게 수정했으니 오류 발생 시 확인 바람
         sendAuthNumber.setOnClickListener(v -> {
             if (email.length() == 0) {
                 Log.d(TAG, "email is empty");
@@ -134,6 +134,7 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
 //                            intent = new Intent(SignUpActivity.this, SignInActivity.class);
 //                            startActivity(intent);
                             doneSignUp.setOnClickListener(view -> {
+                                startActivity(new Intent(getApplicationContext(), Personal1Activity.class));
                                 if (authNumber.length() == 0) {
                                     Log.d(TAG, "name is empty");
                                     Snackbar.make(view, "인증번호를 입력해주세요.", Snackbar.LENGTH_LONG).setAction("YES", new View.OnClickListener() {
@@ -143,6 +144,8 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
                                         }
                                     }).show();
                                 } else {
+                                    startActivity(new Intent(getApplicationContext(), Personal1Activity.class));
+
 //                                    retrofit = new Retrofit.Builder()
 //                                            .baseUrl(API_URL)
 //                                            .build();
@@ -189,7 +192,7 @@ public class SignUpActivity extends AppCompatActivity implements ErrorMessage {
                     }
                 });
             }
-        });
+        });*/
     }
 
 }

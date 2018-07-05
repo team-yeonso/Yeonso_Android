@@ -58,15 +58,13 @@
                             android:layout_margin="10dp"
                             android:background="@drawable/rectangle"
                             android:fadeScrollbars="false"
-
-
                             android:scrollbarSize="2dp"
                             android:scrollbarStyle="outsideInset">
 
                             <TextView
+                                android:id="@+id/accept_text1"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/test" />
+                                android:layout_height="match_parent"/>
                         </ScrollView>
                     </LinearLayout>
 
@@ -125,9 +123,9 @@
                             android:scrollbarStyle="outsideInset">
 
                             <TextView
+                                android:id="@+id/accept_text2"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/test" />
+                                android:layout_height="match_parent" />
                         </ScrollView>
                     </LinearLayout>
 

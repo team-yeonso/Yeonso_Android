@@ -11,7 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import dsm.yeonso.MainActivity;
 import dsm.yeonso.R;
+import dsm.yeonso.SignUpActivity;
 
 public class Personal9Activity extends AppCompatActivity {
 
@@ -46,6 +48,7 @@ public class Personal9Activity extends AppCompatActivity {
                 Snackbar.make(v, "빈칸을 채워주세요.",Snackbar.LENGTH_SHORT).show();
             }else{
                 //
+                startActivity(new Intent(this, MainActivity.class));
             }
         });
 

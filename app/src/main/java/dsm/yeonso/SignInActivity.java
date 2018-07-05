@@ -96,7 +96,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         signUp.setOnClickListener(v -> {
-            intent = new Intent(SignInActivity.this, SignUpActivity.class);
+            intent = new Intent(SignInActivity.this, AcceptActivity.class);
             startActivity(intent);
         });
 

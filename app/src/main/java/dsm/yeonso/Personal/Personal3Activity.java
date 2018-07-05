@@ -34,7 +34,7 @@ public class Personal3Activity extends AppCompatActivity {
             if(TextUtils.isEmpty(height.getText()) || TextUtils.isEmpty(weight.getText())){
                 Snackbar.make(v, "빈칸을 입력해 주세요",Snackbar.LENGTH_SHORT).show();
             }else {
-                intent = new Intent(this, Personal1Activity.class);
+                intent = new Intent(this, Personal4Activity.class);
                 startActivity(intent);
             }
 
